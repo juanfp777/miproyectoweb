@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Culture-Car: Encuentra el vehículo de tus sueños con estilo y exclusividad.">
+  <meta name="keywords" content="Carros de lujo, Autos, Venta, Exclusivos, Premium">
+  <meta name="author" content="Culture-Car">
+  <title>Culture-Car - Venta de Carros de Lujo</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #f0f0f0;
+      background-color: #121212;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #0d0d0d, #1c1c1c);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    header .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #ffbf00;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav ul li a:hover {
+      color: #ffbf00;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 90vh;
+      background: url('img1.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      z-index: 2;
+      color: #ffbf00;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      z-index: 2;
+    }
+
+    .hero a {
+      padding: 1rem 2rem;
+      background: #ffbf00;
+      color: #121212;
+      font-weight: bold;
+      border-radius: 8px;
+      text-transform: uppercase;
+      z-index: 2;
+      transition: background 0.3s ease;
+    }
+
+    .hero a:hover {
+      background: #e6ac00;
+    }
+
+    /* Inventory Section */
+    .inventory {
+      padding: 4rem 2rem;
+      background: #1c1c1c;
+      color: #f0f0f0;
+      text-align: center;
+    }
+
+    .inventory h2 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      color: #ffbf00;
+    }
+
+    .inventory-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .car-card {
+      background: #292929;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .car-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-card h3 {
+      font-size: 1.8rem;
+      padding: 1rem;
+      color: #ffbf00;
+    }
+
+    .car-card p {
+      padding: 0 1rem 1rem;
+      color: #bfbfbf;
+    }
+
+    /* Phrases Section */
+    .phrases {
+      padding: 4rem 2rem;
+      background: #292929;
+      text-align: center;
+    }
+
+    .phrases p {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: #bfbfbf;
+      font-style: italic;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 4rem 2rem;
+      background: #121212;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      color: #ffbf00;
+    }
+
+    .testimonial {
+      margin-bottom: 2rem;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      color: #bfbfbf;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 4rem 2rem;
+      background: linear-gradient(90deg, #1c1c1c, #292929);
+      color: #f0f0f0;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #ffbf00;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact input, .contact textarea, .contact button {
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .contact textarea {
+      resize: none;
+    }
+
+    .contact input, .contact textarea {
+      background: #fff;
+      color: #121212;
+    }
+
+    .contact button {
+      background: #ffbf00;
+      color: #121212;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact button:hover {
+      background: #e6ac00;
+    }
+
+    /* Footer */
+    footer {
+      background: #0d0d0d;
+      color: #bfbfbf;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Culture-Car</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#inventory">Inventario</a></li>
+        <li><a href="#phrases">Inspiración</a></li>
+        <li><a href="#testimonials">Testimonios</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Culture-Car</h1>
+    <p>Encuentra el vehículo de tus sueños con la mejor exclusividad.</p>
+    <a href="#inventory">Explorar Inventario</a>
+  </section>
+
+  <section id="inventory" class="inventory">
+    <h2>Inventario Exclusivo</h2>
+    <div class="inventory-list">
+      <div class="car-card">
+        <img src="img2.jpg" alt="Ferrari">
+        <h3>Ferrari F8 Tributo</h3>
+        <p>Precio: $280,000</p>
+      </div>
+      <div class="car-card">
+        <img src="img1.jpg" alt="Lamborghini">
+        <h3>Lamborghini Huracán EVO</h3>
+        <p>Precio: $350,000</p>
+      </div>
+      <div class="car-card">
+        <img src="img3.jpg" alt="Rolls Royce">
+        <h3>Rolls Royce Phantom</h3>
+        <p>Precio: $450,000</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="phrases" class="phrases">
+    <p>"El lujo es una experiencia, no solo un producto."</p>
+    <p>"Cada auto cuenta una historia, ¿cuál será la tuya?"</p>
+    <p>"La exclusividad no se compra, se vive."</p>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>Testimonios</h2>
+    <div class="testimonial">
+      <p>"Mi Ferrari llegó impecable. Culture-Car es la mejor opción."</p>
+      <span>- Ana Gómez</span>
+    </div>
+    <div class="testimonial">
+      <p>"El Lamborghini Huracán EVO superó todas mis expectativas."</p>
+      <span>- Juan Pérez</span>
+    </div>
+    <div class="testimonial">
+      <p>"Un servicio exclusivo para vehículos de clase mundial."</p>
+      <span>- Andrés López</span>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contáctanos</h2>
+    <form>
+      <input type="text" placeholder="Nombre Completo" required>
+      <input type="email" placeholder="Correo Electrónico" required>
+      <textarea placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Culture-Car. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
